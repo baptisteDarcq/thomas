@@ -1,0 +1,6 @@
+appId: com.nx.appaccount # This is an example app id. Replace it with your app id.
+---
+- launchApp
+- assertVisible: 'Welcome to ScreenAccount!'
+- tapOn: 'Go to Trans.*'
+- assertVisible: 'Welcome to ScreenTransaction.*'
