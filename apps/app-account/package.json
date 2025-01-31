@@ -1,7 +1,0 @@
-{
-  "name": "app-account",
-  "main": "index",
-  "scripts": {
-    "e2e": "maestro test ./test/e2e"
-  }
-}
