@@ -1,7 +1,7 @@
-import { useFeatureFlag } from "core-tech";
-import { AspectRatio, Button, Text } from "core-ui";
+import { AspectRatio } from "core-ui";
+import Constants from "expo-constants";
 import { Image } from "expo-image";
-import { Link } from "expo-router";
+import { BudgetLink } from "feat-budget";
 import { View } from "react-native";
 import { TransactionLink } from "../components/transaction-link";
 
@@ -16,8 +16,6 @@ try {
 export interface ScreenAccountProps {}
 
 export function ScreenAccount(props: ScreenAccountProps) {
-  const featuresAvailable = useFeatureFlag();
-
   return (
     <View className="flex-1 justify-center items-center">
       <AspectRatio
@@ -32,12 +30,8 @@ export function ScreenAccount(props: ScreenAccountProps) {
         />
       </AspectRatio>
 
-      {featuresAvailable.includes("budget") ? (
-        <Link href="./budget" asChild>
-          <Button variant="outline" className="grow">
-            <Text>Lien vers la tab budget</Text>
-          </Button>
-        </Link>
+      {Constants.expoConfig.extra?.modules["budget"] ? (
+        <BudgetLink className="mb-5" />
       ) : null}
       <TransactionLink />
     </View>

@@ -7,7 +7,7 @@ import Animated, {
 import { cn } from "utils";
 import { useColorScheme } from "core-tech";
 import { Sun } from "../../icons/Sun";
-import { colors } from "theme";
+import { colors } from "@theme";
 import { Moon } from "../../icons/Moon";
 
 export function ThemeToggle() {

@@ -20,11 +20,6 @@ module.exports = function (api) {
               ? `./apps/${process.env.EXPO_APP}/assets`
               : "./assets",
           },
-          // I try the fallback to avoid handle a require error if an assets is missing in the client directory
-          // But not way..
-          fallback: {
-            "@assets": "./assets",
-          },
         },
       ],
     ],

@@ -9,7 +9,7 @@ export const colors = commonColors;
 
 export const abstractDarkColors = {
   ...commonAbstractDarkColors,
-  primary: colors.sky[500],
+  primary: colors.sky[200],
 };
 
 export const abstractColors = {
@@ -20,7 +20,7 @@ export const abstractColors = {
       value,
     ])
   ),
-  primary: colors.sky[200],
+  primary: colors.sky[400],
 };
 
 export const colorsByScheme = {

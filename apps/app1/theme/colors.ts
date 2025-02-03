@@ -40,7 +40,7 @@ export const navigationTheme = {
     ...commonnavigationTheme.dark,
     colors: {
       ...commonnavigationTheme.dark.colors,
-      background: colors.orange[500],
+      background: colors.orange[300],
     },
   },
 };

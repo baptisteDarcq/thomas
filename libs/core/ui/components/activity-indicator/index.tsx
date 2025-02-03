@@ -1,4 +1,4 @@
-import { colors } from "theme";
+import { colors } from "@theme";
 import { useColorScheme } from "core-tech";
 import { ActivityIndicator as RNActivityIndicator } from "react-native";
 

@@ -1,2 +1,3 @@
 import { ScreenBudget } from "./screens/screen-budget";
-export { ScreenBudget };
+import { BudgetLink } from "./components/budget-link";
+export { ScreenBudget, BudgetLink };

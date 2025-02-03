@@ -13,15 +13,13 @@ export function App() {
   return (
     <>
       <StatusBar />
-      <FeatureFlagProvider features={[]}>
-        <ActionSheetProvider>
-          <>
-            <Router contexts={routerContexts} />
-            <PortalHost name="alert" />
-            <PortalHost name="select" />
-          </>
-        </ActionSheetProvider>
-      </FeatureFlagProvider>
+      <ActionSheetProvider>
+        <>
+          <Router contexts={routerContexts} />
+          <PortalHost name="alert" />
+          <PortalHost name="select" />
+        </>
+      </ActionSheetProvider>
     </>
   );
 }
