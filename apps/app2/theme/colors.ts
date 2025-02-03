@@ -2,6 +2,7 @@ import {
   colors as commonColors,
   abstractColors as commonAbstractColors,
   abstractDarkColors as commonAbstractDarkColors,
+  navigationTheme as commonnavigationTheme,
 } from "../../../theme";
 
 export const colors = commonColors;
@@ -25,4 +26,21 @@ export const abstractColors = {
 export const colorsByScheme = {
   light: abstractColors,
   dark: abstractDarkColors,
+};
+
+export const navigationTheme = {
+  light: {
+    ...commonnavigationTheme.light,
+    colors: {
+      ...commonnavigationTheme.light.colors,
+      background: colors.sky[100],
+    },
+  },
+  dark: {
+    ...commonnavigationTheme.dark,
+    colors: {
+      ...commonnavigationTheme.dark.colors,
+      background: colors.sky[500],
+    },
+  },
 };

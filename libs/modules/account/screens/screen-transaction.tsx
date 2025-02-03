@@ -1,14 +1,18 @@
-import { useFeatureFlag } from "core-tech";
-import { AspectRatio, Text, ThemeToggle } from "core-ui";
+import { Button, ChevronDown, Text } from "core-ui";
 import { Link } from "expo-router";
-import { Button, View } from "react-native";
+import { ChevronUp } from "lucide-react-native";
+import { View } from "react-native";
 
 export interface ScreenTransactionProps {}
 
 export function ScreenTransaction(props: ScreenTransactionProps) {
   return (
-    <View className="flex-1 justify-center items-center bg-background dark:bg-background-dark">
-      <Text variant="heading">Welcome to ScreenTransaction!</Text>
+    <View className="flex-1 justify-center items-center">
+      <Link href="../" asChild>
+        <Button variant="default">
+          <Text variant="large">Retour</Text>
+        </Button>
+      </Link>
     </View>
   );
 }

@@ -1,5 +1,5 @@
-import React from 'react';
-import { ExpoRoot } from 'expo-router';
+import React from "react";
+import { ExpoRoot } from "expo-router";
 
 export interface RequireContext {
   /** Return the keys that can be resolved. */
@@ -28,16 +28,16 @@ const combineContexts = (contextList: ContextWithPrefix[]) => {
 
   const myCtx = (id: string) => {
     for (const { context, prefix } of contextList) {
-      if (context(`.${id.replace(prefix, '')}`)) {
-        return context(`.${id.replace(prefix, '')}`);
+      if (context(`.${id.replace(prefix, "")}`)) {
+        return context(`.${id.replace(prefix, "")}`);
       }
     }
     return null;
   };
 
-  myCtx['keys'] = () => combinedKeys;
-  myCtx['resolve'] = (id: string) => id;
-  myCtx['id'] = 'combinedContext';
+  myCtx["keys"] = () => combinedKeys;
+  myCtx["resolve"] = (id: string) => id;
+  myCtx["id"] = "combinedContext";
 
   return myCtx;
 };

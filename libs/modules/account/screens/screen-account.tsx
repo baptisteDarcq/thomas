@@ -1,9 +1,9 @@
-import { requireAsset, useColorScheme, useFeatureFlag } from "core-tech";
-import { AspectRatio, Text, ThemeToggle } from "core-ui";
-import { TransactionLink } from "../components/transaction-link";
-import { Link } from "expo-router";
-import { Button, View } from "react-native";
+import { useFeatureFlag } from "core-tech";
+import { AspectRatio, Button, Text } from "core-ui";
 import { Image } from "expo-image";
+import { Link } from "expo-router";
+import { View } from "react-native";
+import { TransactionLink } from "../components/transaction-link";
 
 // We need to find a cleaner way to handle fallback on require failure
 let asset;
@@ -19,13 +19,11 @@ export function ScreenAccount(props: ScreenAccountProps) {
   const featuresAvailable = useFeatureFlag();
 
   return (
-    <View className="flex-1 justify-center items-center bg-background dark:bg-background-dark">
-      <ThemeToggle />
-      <Text variant="heading" className="text-primary dark:text-primary-dark">
-        Welcome to ScreenAccount!
-      </Text>
-
-      <AspectRatio ratio={16 / 9} className="w-[200]">
+    <View className="flex-1 justify-center items-center">
+      <AspectRatio
+        ratio={1}
+        className="w-[200] rounded-lg overflow-hidden mb-20"
+      >
         <Image
           source={asset}
           style={{ flex: 1 }}
@@ -33,9 +31,12 @@ export function ScreenAccount(props: ScreenAccountProps) {
           cachePolicy={"none"}
         />
       </AspectRatio>
+
       {featuresAvailable.includes("budget") ? (
         <Link href="./budget" asChild>
-          <Button title="Go to Budget tab" />
+          <Button variant="outline" className="grow">
+            <Text>Lien vers la tab budget</Text>
+          </Button>
         </Link>
       ) : null}
       <TransactionLink />

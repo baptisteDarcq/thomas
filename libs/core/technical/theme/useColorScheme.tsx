@@ -3,8 +3,6 @@ import { useColorScheme as useNativewindColorScheme } from "nativewind";
 import * as React from "react";
 import { Platform } from "react-native";
 import { colorsByScheme } from "@theme";
-console.log("colorsByScheme");
-console.log(colorsByScheme.light.primary);
 
 function useColorScheme() {
   const { colorScheme, setColorScheme: setNativeWindColorScheme } =

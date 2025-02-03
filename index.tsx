@@ -1,15 +1,38 @@
-import { FeatureFlagProvider, Router } from "core-tech";
+import { ActionSheetProvider } from "@expo/react-native-action-sheet";
+import { PortalHost } from "@rn-primitives/portal";
+import { FeatureFlagProvider, Router, useColorScheme } from "core-tech";
 import { registerRootComponent } from "expo";
 import Constants from "expo-constants";
+import { StatusBar as ExpoStatusBar } from "expo-status-bar";
+import React from "react";
 import "./global.css";
 import { routerContexts } from "./src/router-context";
 
 // Must be exported or Fast Refresh won't update the context
-function App() {
+export function App() {
   return (
-    <FeatureFlagProvider features={[]}>
-      <Router contexts={routerContexts} />
-    </FeatureFlagProvider>
+    <>
+      <StatusBar />
+      <FeatureFlagProvider features={[]}>
+        <ActionSheetProvider>
+          <>
+            <Router contexts={routerContexts} />
+            <PortalHost name="alert" />
+            <PortalHost name="select" />
+          </>
+        </ActionSheetProvider>
+      </FeatureFlagProvider>
+    </>
+  );
+}
+
+function StatusBar() {
+  const { isDarkColorScheme } = useColorScheme();
+  return (
+    <ExpoStatusBar
+      key={`root-status-bar-${isDarkColorScheme ? "light" : "dark"}`}
+      style={isDarkColorScheme ? "light" : "dark"}
+    />
   );
 }
 

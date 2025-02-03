@@ -1,10 +1,12 @@
+import { Button, Text } from "core-ui";
 import { Link } from "expo-router";
-import { Button } from "react-native";
 
 export function TransactionLink() {
   return (
     <Link href="./account/transaction" asChild>
-      <Button title="Go to Transaction" />
+      <Button variant="default">
+        <Text>Lien vers la liste des transactions</Text>
+      </Button>
     </Link>
   );
 }

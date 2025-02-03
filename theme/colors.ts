@@ -1,3 +1,5 @@
+import { DarkTheme, DefaultTheme, Theme } from "@react-navigation/native";
+
 export const colors = {
   white: "#ffffff",
   black: "#000000",
@@ -63,4 +65,50 @@ export const abstractColors = {
 export const colorsByScheme = {
   light: abstractColors,
   dark: abstractDarkColors,
+};
+
+const navigationThemeFonts = {
+  regular: {
+    fontFamily: "sans-serif",
+    fontWeight: "400" as "400",
+  },
+  medium: {
+    fontFamily: "sans-serif-medium",
+    fontWeight: "500" as "500",
+  },
+  bold: {
+    fontFamily: "sans-serif",
+    fontWeight: "600" as "600",
+  },
+  heavy: {
+    fontFamily: "sans-serif",
+    fontWeight: "700" as "700",
+  },
+};
+
+export const navigationTheme = {
+  light: {
+    dark: false,
+    colors: {
+      background: colors.slate[100],
+      border: colors.slate[300],
+      card: colors.slate[300],
+      notification: colors.slate[500],
+      primary: colors.black,
+      text: colors.black,
+    },
+    fonts: navigationThemeFonts,
+  },
+  dark: {
+    dark: true,
+    colors: {
+      background: colors.slate[500],
+      border: colors.slate[300],
+      card: colors.slate[800],
+      notification: colors.slate[500],
+      primary: colors.white,
+      text: colors.white,
+    },
+    fonts: navigationThemeFonts,
+  },
 };
