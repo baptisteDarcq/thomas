@@ -1,4 +1,4 @@
-const nativewindConfigColors = require("./theme/export");
+import { nativewindConfigColors } from "./libs/core/ui/theme";
 
 /** @type {import('tailwindcss').Config} */
 module.exports = {
@@ -9,7 +9,7 @@ module.exports = {
     colors: {
       ...nativewindConfigColors,
       ...(process.env.EXPO_APP
-        ? require(`./apps/${process.env.EXPO_APP}/theme/export.ts`)
+        ? require(`./apps/${process.env.EXPO_APP}/theme.ts`)
         : {}),
     },
     extend: {},

@@ -1,3 +1,1 @@
-export const requireAsset = () => {
-    
-}
+export const requireAsset = ({}) => {};

@@ -27,3 +27,4 @@ export * from "./icons/ChevronUp";
 export * from "./icons/Moon";
 export * from "./icons/Refresh";
 export * from "./icons/Sun";
+export * from "./theme";

@@ -6,6 +6,17 @@ import { Tabs } from "expo-router";
 export default function TabLayout() {
   const screens = [
     <Tabs.Screen
+      key="home"
+      name="home"
+      options={{
+        title: "Home",
+
+        tabBarIcon: ({ color }) => (
+          <FontAwesome size={28} name="home" color={color} />
+        ),
+      }}
+    />,
+    <Tabs.Screen
       key="account"
       name="account"
       options={{

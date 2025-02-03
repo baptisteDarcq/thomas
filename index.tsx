@@ -1,6 +1,6 @@
 import { ActionSheetProvider } from "@expo/react-native-action-sheet";
 import { PortalHost } from "@rn-primitives/portal";
-import { FeatureFlagProvider, Router, useColorScheme } from "core-tech";
+import { Router, useColorScheme } from "core-tech";
 import { registerRootComponent } from "expo";
 import Constants from "expo-constants";
 import { StatusBar as ExpoStatusBar } from "expo-status-bar";

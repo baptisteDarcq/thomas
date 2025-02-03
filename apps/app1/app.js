@@ -40,7 +40,7 @@ module.exports = {
   },
   extra: {
     storybookEnabled: "false",
-    modules: ["account", ""],
+    modules: ["account"],
     initialRoute: "./tabs",
   },
 };
