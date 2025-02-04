@@ -10,12 +10,9 @@ const appAssetsDir = path.join(
 );
 const outputAppFilePath = path.join(
   __dirname,
-  `../apps/${appNameDirectory}/assets/generatedAssetsMap.ts`
+  `../apps/${appNameDirectory}/assets/generated.ts`
 );
-const outputCommonFilePath = path.join(
-  __dirname,
-  `../assets/generatedAssetsMap.ts`
-);
+const outputCommonFilePath = path.join(__dirname, `../assets/generated.ts`);
 
 const imageExtensions = ["png", "jpg", "jpeg"];
 
@@ -53,4 +50,4 @@ const outputCommonContent = `export const assets = {\n${Object.keys(
 fs.writeFileSync(outputAppFilePath, outputAppContent, "utf8");
 fs.writeFileSync(outputCommonFilePath, outputCommonContent, "utf8");
 
-console.log("✅ Fichier assetsMap.js généré !");
+console.log("✅ Fichier generated.ts généré !");

@@ -16,8 +16,8 @@ module.exports = function (api) {
               ? `./apps/${process.env.EXPO_APP}/theme.ts`
               : "./src/core/ui/theme.ts",
             "@assets": process.env.EXPO_APP
-              ? `./apps/${process.env.EXPO_APP}/assets/generatedAssetsMap.ts`
-              : "./assets/generatedAssetsMap.ts",
+              ? `./apps/${process.env.EXPO_APP}/assets/generated.ts`
+              : "./assets/generated.ts",
           },
         },
       ],

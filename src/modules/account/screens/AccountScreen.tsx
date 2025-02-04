@@ -2,7 +2,7 @@ import Constants from "expo-constants";
 import { Image } from "expo-image";
 import { View } from "react-native";
 import { TransactionLink } from "../components/TransactionLink";
-import getAsset from "src/core/technical/asset/get-asset";
+import getAsset from "src/core/technical/asset";
 import { AspectRatio } from "src/core/ui/components/AspectRatio";
 import BudgetLink from "src/modules/budget/components/BudgetLink";
 
