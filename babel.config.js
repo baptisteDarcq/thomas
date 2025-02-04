@@ -14,7 +14,7 @@ module.exports = function (api) {
           alias: {
             "@theme": process.env.EXPO_APP
               ? `./apps/${process.env.EXPO_APP}/theme.ts`
-              : "./libs/core/ui/theme.ts",
+              : "./src/core/ui/theme.ts",
             "@assets": process.env.EXPO_APP
               ? `./apps/${process.env.EXPO_APP}/assets/generatedAssetsMap.ts`
               : "./assets/generatedAssetsMap.ts",

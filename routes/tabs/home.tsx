@@ -1,19 +1,19 @@
-import { Text } from "core-ui";
 import * as React from "react";
 import { View } from "react-native";
-import {
-  GestureHandlerRootView,
-  ScrollView,
-} from "react-native-gesture-handler";
+import { GestureHandlerRootView } from "react-native-gesture-handler";
+import AccountBalance from "src/modules/account/components/AccountBalance";
+import Constants from "expo-constants";
+import BudgetDescription from "src/modules/budget/components/BudgetDescription";
 
 export function ScreenHome() {
   return (
     <GestureHandlerRootView className="flex-1">
-      <ScrollView>
-        <View className="px-8 py-4 justify-center align-middle flex-1 gap-y-5">
-          <Text variant="title">Buttons</Text>
-        </View>
-      </ScrollView>
+      <View className="justify-center align-middle flex-1 px-6 gap-y-10">
+        <AccountBalance />
+        {Constants.expoConfig.extra.modules?.includes("budget") ? (
+          <BudgetDescription />
+        ) : null}
+      </View>
     </GestureHandlerRootView>
   );
 }

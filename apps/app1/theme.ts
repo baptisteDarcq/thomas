@@ -3,13 +3,13 @@ import {
   abstractColors as commonAbstractColors,
   abstractDarkColors as commonAbstractDarkColors,
   navigationTheme as commonnavigationTheme,
-} from "../../theme";
+} from "../../src/core/ui/theme";
 
 export const colors = commonColors;
 
 export const abstractDarkColors = {
   ...commonAbstractDarkColors,
-  primary: colors.orange[500],
+  primary: colors.orange[200],
 };
 
 export const abstractColors = {
@@ -20,7 +20,7 @@ export const abstractColors = {
       value,
     ])
   ),
-  primary: colors.orange[200],
+  primary: colors.orange[500],
 };
 
 export const colorsByScheme = {

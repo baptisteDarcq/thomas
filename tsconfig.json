@@ -16,11 +16,7 @@
     "skipDefaultLibCheck": true,
     "baseUrl": ".",
     "paths": {
-      "core-tech": ["libs/core/technical/export.ts"],
-      "core-ui": ["libs/core/ui/export.ts"],
-      "feat-account": ["libs/modules/account/export.ts"],
-      "feat-budget": ["libs/modules/budget/export.ts"],
-      "@theme": ["libs/core/ui/theme.ts"],
+      "@theme": ["src/core/ui/theme.ts"],
       "@assets": ["assets/generatedAssetsMap.ts"]
     }
   },

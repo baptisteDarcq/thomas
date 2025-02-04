@@ -1,12 +1,14 @@
 import { ActionSheetProvider } from "@expo/react-native-action-sheet";
 import { PortalHost } from "@rn-primitives/portal";
-import { Router, useColorScheme } from "core-tech";
+
 import { registerRootComponent } from "expo";
 import Constants from "expo-constants";
 import { StatusBar as ExpoStatusBar } from "expo-status-bar";
 import React from "react";
 import "./global.css";
-import { routerContexts } from "./src/router-context";
+import { routerContexts } from "./src";
+import { useColorScheme } from "src/core/technical/theme/useColorScheme";
+import Router from "src/core/technical/navigation/router";
 
 // Must be exported or Fast Refresh won't update the context
 export function App() {

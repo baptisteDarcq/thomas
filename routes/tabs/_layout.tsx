@@ -1,7 +1,10 @@
 import FontAwesome from "@expo/vector-icons/FontAwesome";
-import { ThemeToggle } from "core-ui";
 import Constants from "expo-constants";
 import { Tabs } from "expo-router";
+import { ThemeToggle } from "src/core/ui/components/ThemeToggle";
+import { Contact } from "src/core/ui/icons/Contact";
+import { CreditCard } from "src/core/ui/icons/CreditCard";
+import { House } from "src/core/ui/icons/House";
 
 export default function TabLayout() {
   const screens = [
@@ -11,8 +14,10 @@ export default function TabLayout() {
       options={{
         title: "Home",
 
-        tabBarIcon: ({ color }) => (
-          <FontAwesome size={28} name="home" color={color} />
+        tabBarIcon: ({ focused }) => (
+          <House
+            className={focused ? "text-primary dark:text-primary-dark" : ""}
+          />
         ),
       }}
     />,
@@ -22,8 +27,10 @@ export default function TabLayout() {
       options={{
         title: "Account",
 
-        tabBarIcon: ({ color }) => (
-          <FontAwesome size={28} name="home" color={color} />
+        tabBarIcon: ({ focused }) => (
+          <CreditCard
+            className={focused ? "text-primary dark:text-primary-dark" : ""}
+          />
         ),
       }}
     />,
@@ -35,18 +42,17 @@ export default function TabLayout() {
         name="budget"
         options={{
           title: "Budget",
-          tabBarIcon: ({ color }) => (
-            <FontAwesome size={28} name="home" color={color} />
+          tabBarIcon: ({ focused }) => (
+            <Contact
+              className={focused ? "text-primary dark:text-primary-dark" : ""}
+            />
           ),
         }}
       />
     );
   }
   return (
-    <Tabs
-      initialRouteName="account"
-      screenOptions={{ headerRight: ThemeToggle }}
-    >
+    <Tabs initialRouteName="home" screenOptions={{ headerRight: ThemeToggle }}>
       {screens}
     </Tabs>
   );

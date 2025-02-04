@@ -41,6 +41,6 @@ module.exports = {
   extra: {
     storybookEnabled: "false",
     modules: ["account", "budget"],
-    initialRoute: "./tabs/budget",
+    initialRoute: "./tabs",
   },
 };
