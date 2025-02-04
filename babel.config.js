@@ -1,5 +1,4 @@
 module.exports = function (api) {
-  console.log(process.env.EXPO_APP);
   api.cache(true);
   return {
     presets: [
@@ -17,8 +16,8 @@ module.exports = function (api) {
               ? `./apps/${process.env.EXPO_APP}/theme.ts`
               : "./libs/core/ui/theme.ts",
             "@assets": process.env.EXPO_APP
-              ? `./apps/${process.env.EXPO_APP}/assets`
-              : "./assets",
+              ? `./apps/${process.env.EXPO_APP}/assets/generatedAssetsMap.ts`
+              : "./assets/generatedAssetsMap.ts",
           },
         },
       ],

@@ -3,10 +3,11 @@
   "main": "index",
   "version": "1.0.0",
   "scripts": {
-    "start:app1": "EXPO_APP=app1 expo start",
+    "generate:assets": "node scripts/generateAssets.ts",
+    "start:app1": "yarn generate:assets app1 && EXPO_APP=app1 expo start",
     "prebuild:app1": "EXPO_APP=app1 expo prebuild --clean",
     "run-ios:app1": "EXPO_APP=app1 expo run:ios",
-    "start:app2": "EXPO_APP=app2 expo start",
+    "start:app2": "yarn generate:assets app2 && EXPO_APP=app2 expo start",
     "prebuild:app2": "EXPO_APP=app2 expo prebuild --clean",
     "run-ios:app2": "EXPO_APP=app2 expo run:ios",
     "start:storybook": "sb-rn-get-stories --config-path .storybook && STORYBOOK_ENABLED=true yarn expo start"

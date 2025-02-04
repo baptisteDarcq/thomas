@@ -21,7 +21,7 @@
       "feat-account": ["libs/modules/account/export.ts"],
       "feat-budget": ["libs/modules/budget/export.ts"],
       "@theme": ["libs/core/ui/theme.ts"],
-      "@assets": ["assets"]
+      "@assets": ["assets/generatedAssetsMap.ts"]
     }
   },
   "exclude": ["node_modules", "tmp"],
