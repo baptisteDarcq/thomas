@@ -3,7 +3,6 @@ import { ExpoRoot } from "expo-router";
 import { ThemeProvider } from "@react-navigation/native";
 import { navigationTheme } from "@theme";
 import { useColorScheme } from "src/core/technical/theme/useColorScheme";
-import { ViewProps } from "react-native";
 
 export interface RequireContext {
   /** Return the keys that can be resolved. */
@@ -54,7 +53,7 @@ export function Router({ contexts }: RouterProps) {
   return (
     <ExpoRoot
       context={combineContexts(contexts)}
-      wrapper={({ children }: Pick<ViewProps, "children">) => {
+      wrapper={({ children }) => {
         const { colorScheme } = useColorScheme();
         return (
           <ThemeProvider

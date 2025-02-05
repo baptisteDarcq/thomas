@@ -12,12 +12,9 @@ module.exports = function (api) {
         {
           root: ["."],
           alias: {
-            "@theme": process.env.EXPO_APP
-              ? `./apps/${process.env.EXPO_APP}/theme.ts`
-              : "./src/core/ui/theme.ts",
-            "@assets": process.env.EXPO_APP
-              ? `./apps/${process.env.EXPO_APP}/assets/generated.ts`
-              : "./assets/generated.ts",
+            "@theme":`./apps/${process.env.EXPO_APP}/theme.ts`,
+            "@assets": `./apps/${process.env.EXPO_APP}/assets/generated.ts`,
+            "@translations": `./apps/${process.env.EXPO_APP}/translations.ts`
           },
         },
       ],

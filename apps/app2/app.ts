@@ -1,10 +1,10 @@
-module.exports = {
-  name: "app1-repo",
-  slug: "app1-repo",
+export default {
+  name: "app2-repo",
+  slug: "app2-repo",
   version: "1.0.0",
   orientation: "portrait",
-  icon: "./apps/app1/assets/images/icon.png",
-  scheme: "app1",
+  icon: "./apps/app2/assets/images/icon.png",
+  scheme: "app2",
   userInterfaceStyle: "automatic",
   newArchEnabled: true,
   plugins: [
@@ -12,7 +12,7 @@ module.exports = {
     [
       "expo-splash-screen",
       {
-        image: "./apps/app1/assets/images/splash-icon.png",
+        image: "./apps/app2/assets/images/splash-icon.png",
         imageWidth: 200,
         resizeMode: "contain",
         backgroundColor: "#ffffff",
@@ -21,17 +21,17 @@ module.exports = {
     [
       "expo-asset",
       {
-        assets: ["./apps/app1/assets/images/logo.png"],
+        assets: ["./apps/app2/assets/images/logo.png"],
       },
     ],
   ],
   ios: {
-    bundleIdentifier: "com.baptisted-matters.app1",
+    bundleIdentifier: "com.baptisted-matters.app2",
   },
   android: {
-    package: "com.baptistedmatters.app1",
+    package: "com.baptistedmatters.app2",
     adaptiveIcon: {
-      foregroundImage: "./apps/app1/assets/images/adaptive-icon.png",
+      foregroundImage: "./apps/app2/assets/images/adaptive-icon.png",
       backgroundColor: "#ffffff",
     },
   },
@@ -40,7 +40,7 @@ module.exports = {
   },
   extra: {
     storybookEnabled: "false",
-    modules: ["account"],
+    modules: ["account", "budget"],
     initialRoute: "./tabs",
   },
 };

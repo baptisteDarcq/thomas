@@ -2,6 +2,7 @@
   "extends": "expo/tsconfig.base",
   "compileOnSave": false,
   "compilerOptions": {
+    "allowImportingTsExtensions": true,
     "rootDir": ".",
     "sourceMap": true,
     "declaration": false,
@@ -17,7 +18,8 @@
     "baseUrl": ".",
     "paths": {
       "@theme": ["src/core/ui/theme.ts"],
-      "@assets": ["assets/generated.ts"]
+      "@assets": ["assets/generated.ts"],
+      "@translations": ["src/core/translations/defaults.ts"]
     }
   },
   "exclude": ["node_modules", "tmp"],
@@ -26,6 +28,6 @@
     "**/*.tsx",
     "nativewind-env.d.ts",
     ".expo/types/**/*.ts",
-    "expo-env.d.ts"
+    "expo-env.d.ts",
   ]
 }
