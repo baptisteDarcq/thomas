@@ -1,11 +1,6 @@
+import { DeepPartial } from "src/core/technical/types";
 import { AppTranslations } from "src/core/translations/types";
 
-const fr = {
+export const fr = {
   // Override some translation keys here
-  nested: {
-    "level-1": "hoy",
-  },
-  title: "Bonjoir",
-} satisfies Partial<AppTranslations>;
-
-export default fr;
+} satisfies DeepPartial<AppTranslations>;

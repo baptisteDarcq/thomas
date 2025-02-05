@@ -5,12 +5,12 @@ import { Button } from "src/core/ui/components/Button";
 import { Text } from "src/core/ui/components/Text";
 
 export function TransactionScreen() {
-  const {t} = useTranslation()
+  const { t } = useTranslation();
   return (
     <View className="flex-1 justify-center items-center">
       <Link href="../" asChild>
         <Button variant="default">
-          <Text variant="large">{t('title')}</Text>
+          <Text variant="large">{t("account.title")}</Text>
         </Button>
       </Link>
     </View>
