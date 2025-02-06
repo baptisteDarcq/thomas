@@ -14,6 +14,7 @@ import {
   useInitialAndroidBarSync,
 } from "src/core/technical/theme/useColorScheme";
 import Router from "src/core/technical/navigation/router";
+import getAsset from "src/core/technical/asset";
 
 export {
   // Catch any errors thrown by the Layout component.
@@ -27,8 +28,12 @@ SplashScreen.preventAutoHideAsync();
 export function App() {
   useInitialAndroidBarSync();
   const [loaded] = useFonts({
-    primary: require("../assets/fonts/SpaceMono-Regular.ttf"),
-    secondary: require("../assets/fonts/SpaceMono-Regular.ttf"),
+    "Primary-Light": getAsset("fonts/Primary-Light"),
+    "Primary-Regular": getAsset("fonts/Primary-Regular"),
+    "Primary-Bold": getAsset("fonts/Primary-Bold"),
+    "Secondary-Light": getAsset("fonts/Secondary-Light"),
+    "Secondary-Regular": getAsset("fonts/Secondary-Regular"),
+    "Secondary-Bold": getAsset("fonts/Secondary-Bold"),
   });
 
   useEffect(() => {

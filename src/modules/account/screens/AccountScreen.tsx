@@ -14,7 +14,7 @@ export function AccountScreen() {
         className="w-[200] rounded-lg overflow-hidden mb-20"
       >
         <Image
-          source={getAsset("logo")}
+          source={getAsset("images/logo")}
           style={{ flex: 1 }}
           contentFit="cover"
           cachePolicy={"none"}

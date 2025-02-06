@@ -3,7 +3,7 @@ import { Text } from "src/core/ui/components/Text";
 
 export function AccountBalance() {
   return (
-    <View className="flex items-center bg-background py-4 px-6 rounded-xl">
+    <View className="flex items-center bg-background py-4 px-6 rounded-xl ">
       <Text variant="heading" className="text-black dark:text-black">
         Account component
       </Text>

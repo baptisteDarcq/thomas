@@ -111,7 +111,17 @@ export const navigationTheme = {
   },
 };
 
-export const nativewindConfigColors = {
-  ...abstractColors,
-  ...colors,
+export const nativewindThemeConfig = {
+  colors: {
+    ...abstractColors,
+    ...colors,
+  },
+  fontFamily: {
+    "primary-light": ["Primary-Light"],
+    "primary-regular": ["Primary-Regular"],
+    "primary-bold": ["Primary-Bold"],
+    "secondary-light": ["Secondary-Light"],
+    "secondary-regular": ["Secondary-Regular"],
+    "secondary-bold": ["Secondary-Bold"],
+  },
 };
