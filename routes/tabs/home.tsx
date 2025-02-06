@@ -17,7 +17,7 @@ export function ScreenHome() {
         <Text className="font-secondary-regular">font-secondary-regular</Text>
         <Text className="font-secondary-bold">font-secondary-bold</Text>
         <AccountBalance />
-        {Constants.expoConfig.extra.modules?.includes("budget") ? (
+        {Constants.expoConfig?.extra?.modules?.includes("budget") ? (
           <BudgetDescription />
         ) : null}
       </View>

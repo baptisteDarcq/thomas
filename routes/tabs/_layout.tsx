@@ -35,7 +35,7 @@ export default function TabLayout() {
       }}
     />,
   ];
-  if (Constants.expoConfig.extra.modules?.includes("budget")) {
+  if (Constants.expoConfig?.extra?.modules?.includes("budget")) {
     screens.push(
       <Tabs.Screen
         key="budget"

@@ -10,7 +10,7 @@
     "start:app2": "yarn generate:assets app2 && EXPO_APP=app2 expo start -c",
     "prebuild:app2": "EXPO_APP=app2 expo prebuild --clean",
     "run-ios:app2": "EXPO_APP=app2 expo run:ios",
-    "start:storybook": "sb-rn-get-stories --config-path .storybook && STORYBOOK_ENABLED=true yarn expo start"
+    "start:app1:storybook": "sb-rn-get-stories --config-path .storybook && yarn generate:assets app1 && STORYBOOK_ENABLED=true EXPO_APP=app1 yarn expo start -c"
   },
   "jest": {
     "preset": "jest-expo"

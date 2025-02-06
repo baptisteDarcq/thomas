@@ -9,7 +9,7 @@ export const routerContexts = [
     context: require.context("./modules/account/routes", true),
     prefix: "./tabs/account",
   },
-  ...(Constants.expoConfig.extra.modules?.includes("budget")
+  ...(Constants.expoConfig?.extra?.modules?.includes("budget")
     ? [
         {
           context: require.context("./modules/budget/routes", true),
