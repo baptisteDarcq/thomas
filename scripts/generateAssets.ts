@@ -3,34 +3,42 @@ const path = require("path");
 
 const appNameDirectory = process.argv[2];
 
-const commonAssetsDir = path.join(__dirname, "../assets/images");
-const appAssetsDir = path.join(
-  __dirname,
-  `../apps/${appNameDirectory}/assets/images`
-);
+const commonAssetsDir = path.join(__dirname, "../assets");
+const appAssetsDir = path.join(__dirname, `../apps/${appNameDirectory}/assets`);
 const outputAppFilePath = path.join(
   __dirname,
-  `../apps/${appNameDirectory}/assets/generatedAssetsMap.ts`
+  `../apps/${appNameDirectory}/assets/generated.ts`
 );
-const outputCommonFilePath = path.join(
-  __dirname,
-  `../assets/generatedAssetsMap.ts`
-);
+const outputCommonFilePath = path.join(__dirname, `../assets/generated.ts`);
 
-const imageExtensions = ["png", "jpg", "jpeg"];
+const extensions = ["ttf", "png", "svg"];
 
-function generateFiles(assetDir) {
+function generateFiles(distPath) {
   return fs
-    .readdirSync(assetDir)
-    .filter((file) =>
-      imageExtensions.includes(file.split(".").pop().toLowerCase())
-    );
+    .readdirSync(distPath)
+    .filter(function (file) {
+      return fs.statSync(distPath + "/" + file).isDirectory();
+    })
+    .reduce(function (all, subDir) {
+      return [
+        ...all,
+        ...fs
+          .readdirSync(distPath + "/" + subDir)
+          .filter((file) =>
+            extensions.includes(file.split(".").pop().toLowerCase())
+          )
+          .map((file) => subDir + "/" + file),
+      ];
+    }, []);
 }
 
 function generateAssetsMap(files) {
   return files.reduce((acc, file) => {
-    const key = path.basename(file, path.extname(file));
-    acc[key] = ["./images", file].join("/");
+    const key = `${path.dirname(file)}/${path.basename(
+      file,
+      path.extname(file)
+    )}`;
+    acc[key] = [".", file].join("/");
     return acc;
   }, {});
 }
@@ -53,4 +61,4 @@ const outputCommonContent = `export const assets = {\n${Object.keys(
 fs.writeFileSync(outputAppFilePath, outputAppContent, "utf8");
 fs.writeFileSync(outputCommonFilePath, outputCommonContent, "utf8");
 
-console.log("✅ Fichier assetsMap.js généré !");
+console.log("✅ Fichier generated.ts généré !");

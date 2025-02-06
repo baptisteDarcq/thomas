@@ -3,6 +3,7 @@ import {
   abstractColors as commonAbstractColors,
   abstractDarkColors as commonAbstractDarkColors,
   navigationTheme as commonnavigationTheme,
+  nativewindThemeConfig as commonNativewindThemeConfig,
 } from "../../src/core/ui/theme";
 
 export const colors = commonColors;
@@ -45,7 +46,10 @@ export const navigationTheme = {
   },
 };
 
-export const nativewindConfigColors = {
-  ...abstractColors,
-  ...colors,
+export const nativewindThemeConfig = {
+  ...commonNativewindThemeConfig,
+  colors: {
+    ...abstractColors,
+    ...colors,
+  },
 };

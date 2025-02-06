@@ -1,17 +1,46 @@
+import { useFonts } from "expo-font";
+import { SplashScreen } from "expo-router";
 import { ActionSheetProvider } from "@expo/react-native-action-sheet";
 import { PortalHost } from "@rn-primitives/portal";
 
 import { registerRootComponent } from "expo";
 import Constants from "expo-constants";
 import { StatusBar as ExpoStatusBar } from "expo-status-bar";
-import React from "react";
+import React, { useEffect } from "react";
 import "./global.css";
 import { routerContexts } from "./src";
-import { useColorScheme } from "src/core/technical/theme/useColorScheme";
+import {
+  useColorScheme,
+  useInitialAndroidBarSync,
+} from "src/core/technical/theme/useColorScheme";
 import Router from "src/core/technical/navigation/router";
+import getAsset from "src/core/technical/asset";
+
+// Prevent the splash screen from auto-hiding before asset loading is complete.
+SplashScreen.preventAutoHideAsync();
 
 // Must be exported or Fast Refresh won't update the context
 export function App() {
+  useInitialAndroidBarSync();
+  const [loaded] = useFonts({
+    "Primary-Light": getAsset("fonts/Primary-Light"),
+    "Primary-Regular": getAsset("fonts/Primary-Regular"),
+    "Primary-Bold": getAsset("fonts/Primary-Bold"),
+    "Secondary-Light": getAsset("fonts/Secondary-Light"),
+    "Secondary-Regular": getAsset("fonts/Secondary-Regular"),
+    "Secondary-Bold": getAsset("fonts/Secondary-Bold"),
+  });
+
+  useEffect(() => {
+    if (loaded) {
+      SplashScreen.hideAsync();
+    }
+  }, [loaded]);
+
+  if (!loaded) {
+    return null;
+  }
+
   return (
     <>
       <StatusBar />

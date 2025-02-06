@@ -1,0 +1,4 @@
+```
+Primary-* -> "Merriweather-*"
+Secondary-* -> "Manrope-*"
+```

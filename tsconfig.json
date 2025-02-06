@@ -17,12 +17,11 @@
     "baseUrl": ".",
     "paths": {
       "@theme": ["src/core/ui/theme.ts"],
-      "@assets": ["assets/generatedAssetsMap.ts"]
+      "@assets": ["assets/generated.ts"]
     }
   },
   "exclude": ["node_modules", "tmp"],
   "include": [
-    "./types/metro-require",
     "**/*.ts",
     "**/*.tsx",
     "nativewind-env.d.ts",
