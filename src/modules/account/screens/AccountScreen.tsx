@@ -2,7 +2,7 @@ import Constants from "expo-constants";
 import { Image } from "expo-image";
 import { View } from "react-native";
 import { TransactionLink } from "../components/TransactionLink";
-import getAsset from "src/core/technical/asset";
+import getAsset from "src/core/technical/assets";
 import { AspectRatio } from "src/core/ui/components/AspectRatio";
 import BudgetLink from "src/modules/budget/components/BudgetLink";
 
@@ -21,7 +21,7 @@ export function AccountScreen() {
         />
       </AspectRatio>
 
-      {Constants.expoConfig.extra?.modules["budget"] ? (
+      {Constants.expoConfig?.extra?.modules["budget"] ? (
         <BudgetLink className="mb-5" />
       ) : null}
       <TransactionLink />

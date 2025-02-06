@@ -1,5 +1,5 @@
-import app1Config from "./apps/app1/app.js";
-import app2Config from "./apps/app2/app.js";
+import app1Config from "./apps/app1/app.ts";
+import app2Config from "./apps/app2/app.ts";
 
 export default ({ config }) => {
   const app = process.env.EXPO_APP;

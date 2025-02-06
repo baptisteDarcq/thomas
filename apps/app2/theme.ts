@@ -29,7 +29,10 @@ export const colorsByScheme = {
   dark: abstractDarkColors,
 };
 
-export const navigationTheme = {
+export const navigationTheme: {
+  light: ReactNavigation.Theme;
+  dark: ReactNavigation.Theme;
+} = {
   light: {
     ...commonnavigationTheme.light,
     colors: {

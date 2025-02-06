@@ -1,21 +1,21 @@
-import { useFonts } from "expo-font";
-import { SplashScreen } from "expo-router";
 import { ActionSheetProvider } from "@expo/react-native-action-sheet";
 import { PortalHost } from "@rn-primitives/portal";
+import { useFonts } from "expo-font";
+import { SplashScreen } from "expo-router";
 
 import { registerRootComponent } from "expo";
 import Constants from "expo-constants";
 import { StatusBar as ExpoStatusBar } from "expo-status-bar";
 import React, { useEffect } from "react";
-import "./global.css";
-import { routerContexts } from "./src";
+import getAsset from "src/core/technical/assets";
+import Router from "src/core/technical/navigation/router";
 import {
   useColorScheme,
   useInitialAndroidBarSync,
 } from "src/core/technical/theme/useColorScheme";
-import Router from "src/core/technical/navigation/router";
-import getAsset from "src/core/technical/asset";
-
+import "src/core/translations";
+import "./global.css";
+import { routerContexts } from "./src";
 // Prevent the splash screen from auto-hiding before asset loading is complete.
 SplashScreen.preventAutoHideAsync();
 
@@ -68,7 +68,7 @@ function StatusBar() {
 let AppEntryPoint = App;
 
 // Render Storybook if storybookEnabled is true
-if (Constants.expoConfig.extra.storybookEnabled === "true") {
+if (Constants.expoConfig?.extra?.storybookEnabled === "true") {
   AppEntryPoint = require("./.storybook").default;
 }
 

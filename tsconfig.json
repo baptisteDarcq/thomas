@@ -2,30 +2,45 @@
   "extends": "expo/tsconfig.base",
   "compileOnSave": false,
   "compilerOptions": {
+    "allowImportingTsExtensions": true,
     "rootDir": ".",
     "sourceMap": true,
     "declaration": false,
     "moduleResolution": "node",
     "emitDecoratorMetadata": true,
     "experimentalDecorators": true,
+    "strictNullChecks": true,
     "importHelpers": true,
     "target": "es2015",
     "module": "esnext",
-    "lib": ["es2020", "dom"],
+    "lib": [
+      "es2020",
+      "dom"
+    ],
     "skipLibCheck": true,
     "skipDefaultLibCheck": true,
     "baseUrl": ".",
     "paths": {
-      "@theme": ["src/core/ui/theme.ts"],
-      "@assets": ["assets/generated.ts"]
+      "@theme": [
+        "src/core/ui/theme.ts"
+      ],
+      "@assets": [
+        "assets/generated.ts"
+      ],
+      "@translations": [
+        "src/core/translations/defaults.ts"
+      ]
     }
   },
-  "exclude": ["node_modules", "tmp"],
+  "exclude": [
+    "node_modules",
+    "tmp"
+  ],
   "include": [
     "**/*.ts",
     "**/*.tsx",
-    "nativewind-env.d.ts",
     ".expo/types/**/*.ts",
-    "expo-env.d.ts"
+    "expo-env.d.ts",
+    "@types/*.d.ts"
   ]
 }

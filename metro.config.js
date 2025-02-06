@@ -9,6 +9,7 @@ const config = getDefaultConfig(projectRoot);
 module.exports = withStorybook(
   withNativeWind(config, {
     input: "./global.css",
+    disableTypeScriptGeneration: true
   }),
   { enabled: true, configPath: path.resolve(__dirname, "./.storybook") }
 );

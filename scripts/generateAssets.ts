@@ -61,4 +61,4 @@ const outputCommonContent = `export const assets = {\n${Object.keys(
 fs.writeFileSync(outputAppFilePath, outputAppContent, "utf8");
 fs.writeFileSync(outputCommonFilePath, outputCommonContent, "utf8");
 
-console.log("✅ Fichier generated.ts généré !");
+console.log("✅ Fichier de mapping des assets généré !");
