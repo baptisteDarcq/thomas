@@ -10,7 +10,7 @@ export function TransactionScreen() {
     <View className="flex-1 justify-center items-center">
       <Link href="../" asChild>
         <Button variant="default">
-          <Text variant="large">{t("account.title")}</Text>
+          <Text variant="large">{t("account.subtitle")}</Text>
         </Button>
       </Link>
     </View>
