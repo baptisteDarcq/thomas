@@ -16,11 +16,6 @@ import {
 import Router from "src/core/technical/navigation/router";
 import getAsset from "src/core/technical/asset";
 
-export {
-  // Catch any errors thrown by the Layout component.
-  ErrorBoundary,
-} from "expo-router";
-
 // Prevent the splash screen from auto-hiding before asset loading is complete.
 SplashScreen.preventAutoHideAsync();
 

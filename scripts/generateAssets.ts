@@ -11,7 +11,7 @@ const outputAppFilePath = path.join(
 );
 const outputCommonFilePath = path.join(__dirname, `../assets/generated.ts`);
 
-const extensions = ["ttf", "png"];
+const extensions = ["ttf", "png", "svg"];
 
 function generateFiles(distPath) {
   return fs
