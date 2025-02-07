@@ -1,10 +1,9 @@
-import { cn } from "src/core/technical/theme/cn";
 import * as SelectPrimitive from "@rn-primitives/select";
 import * as React from "react";
-import { Pressable, ScrollView, View } from "react-native";
+import { Pressable, View } from "react-native";
 import Animated, { FadeIn, FadeOut } from "react-native-reanimated";
-import { Check } from "../icons/Check";
-import { ChevronDown } from "../icons/ChevronDown";
+import Icon from "src/core/technical/icon/Icon";
+import { cn } from "src/core/technical/theme/cn";
 
 type Option = SelectPrimitive.Option;
 
@@ -43,10 +42,9 @@ const SelectTrigger = React.forwardRef<
     {...props}
   >
     {children}
-    <ChevronDown
-      size={16}
-      aria-hidden={true}
-      className="text-foreground dark:text-foreground-dark"
+    <Icon
+      src="icons/chevron-down"
+      className="w-[16px] text-foreground dark:text-foreground-dark"
     />
   </SelectPrimitive.Trigger>
 ));
@@ -115,10 +113,9 @@ const SelectItem = React.forwardRef<
   >
     <View className="absolute left-3.5 flex h-3.5 pt-px w-3.5 items-center justify-center">
       <SelectPrimitive.ItemIndicator>
-        <Check
-          size={16}
-          strokeWidth={3}
-          className="text-foreground dark:text-foreground-dark"
+        <Icon
+          src="icons/check"
+          className="h-[16px] stroke-3 text-foreground dark:text-foreground-dark"
         />
       </SelectPrimitive.ItemIndicator>
     </View>

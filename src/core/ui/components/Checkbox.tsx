@@ -1,8 +1,8 @@
-import { cn } from "src/core/technical/theme/cn";
 import * as CheckboxPrimitive from "@rn-primitives/checkbox";
 import { cva, VariantProps } from "class-variance-authority";
 import * as React from "react";
-import { Check } from "../icons/Check";
+import Icon from "src/core/technical/icon/Icon";
+import { cn } from "src/core/technical/theme/cn";
 
 const checkboxVariants = cva(
   "shrink-0 rounded bg-background dark:bg-background-dark disabled:cursor-not-allowed disabled:opacity-50",
@@ -46,7 +46,10 @@ const Checkbox = React.forwardRef<
       {...props}
     >
       <CheckboxPrimitive.Indicator className="flex w-full h-full items-center justify-center">
-        <Check className={cn(checkboxIconVariants({ size }))} />
+        <Icon
+          src="icons/check"
+          className={cn(checkboxIconVariants({ size }))}
+        />
       </CheckboxPrimitive.Indicator>
     </CheckboxPrimitive.Root>
   );

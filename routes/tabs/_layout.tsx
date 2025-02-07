@@ -1,10 +1,7 @@
-import FontAwesome from "@expo/vector-icons/FontAwesome";
 import Constants from "expo-constants";
 import { Tabs } from "expo-router";
+import Icon from "src/core/technical/icon/Icon";
 import { ThemeToggle } from "src/core/ui/components/ThemeToggle";
-import { Contact } from "src/core/ui/icons/Contact";
-import { CreditCard } from "src/core/ui/icons/CreditCard";
-import { House } from "src/core/ui/icons/House";
 
 export default function TabLayout() {
   const screens = [
@@ -15,7 +12,8 @@ export default function TabLayout() {
         title: "Home",
 
         tabBarIcon: ({ focused }) => (
-          <House
+          <Icon
+            src="icons/house"
             className={focused ? "text-primary dark:text-primary-dark" : ""}
           />
         ),
@@ -28,7 +26,8 @@ export default function TabLayout() {
         title: "Account",
 
         tabBarIcon: ({ focused }) => (
-          <CreditCard
+          <Icon
+            src="icons/credit-card"
             className={focused ? "text-primary dark:text-primary-dark" : ""}
           />
         ),
@@ -43,7 +42,8 @@ export default function TabLayout() {
         options={{
           title: "Budget",
           tabBarIcon: ({ focused }) => (
-            <Contact
+            <Icon
+              src="icons/contact"
               className={focused ? "text-primary dark:text-primary-dark" : ""}
             />
           ),

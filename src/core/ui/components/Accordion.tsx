@@ -14,7 +14,7 @@ import Animated, {
   useDerivedValue,
   withTiming,
 } from "react-native-reanimated";
-import { ChevronDown } from "../icons/ChevronDown";
+import Icon from "src/core/technical/icon/Icon";
 import { cn } from "src/core/technical/theme/cn";
 
 const Accordion = React.forwardRef<
@@ -87,9 +87,11 @@ const AccordionTrigger = React.forwardRef<
           >
             {children}
             <Animated.View style={chevronStyle}>
-              <ChevronDown
-                size={18}
-                className={"text-foreground dark:text-foreground-dark shrink-0"}
+              <Icon
+                src="icons/chevron-down"
+                className={
+                  "h-[18px] text-foreground dark:text-foreground-dark shrink-0"
+                }
               />
             </Animated.View>
           </Pressable>

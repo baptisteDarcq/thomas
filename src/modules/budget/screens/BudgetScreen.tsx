@@ -1,9 +1,19 @@
+import * as React from "react";
+import { View } from "react-native";
+import {
+  GestureHandlerRootView,
+  ScrollView,
+} from "react-native-gesture-handler";
+import { useSafeAreaInsets } from "react-native-safe-area-context";
+import Icon from "src/core/technical/icon/Icon";
+import { IconClassContext } from "src/core/technical/icon/iconWithContext";
 import {
   Accordion,
   AccordionContent,
   AccordionItem,
   AccordionTrigger,
 } from "src/core/ui/components/Accordion";
+import { ActivityIndicator } from "src/core/ui/components/ActivityIndicator";
 import {
   AlertDialog,
   AlertDialogAction,
@@ -19,18 +29,12 @@ import {
   AvatarFallback,
   AvatarImage,
 } from "src/core/ui/components/Avatar";
-import { Bell } from "src/core/ui/icons/Bell";
 import { Button } from "src/core/ui/components/Button";
 import { Checkbox } from "src/core/ui/components/Checkbox";
-import { ChevronDown } from "src/core/ui/icons/ChevronDown";
-import { ChevronRight } from "src/core/ui/icons/ChevronRight";
-import { ChevronUp } from "src/core/ui/icons/ChevronUp";
-import { IconClassContext } from "src/core/ui/icons/iconWithContext";
 import { Input } from "src/core/ui/components/Input";
 import { Label } from "src/core/ui/components/Label";
 import { Progress } from "src/core/ui/components/Progress";
 import { RadioGroup, RadioGroupItem } from "src/core/ui/components/Radio";
-import { Refresh } from "src/core/ui/icons/Refresh";
 import {
   Select,
   SelectContent,
@@ -49,14 +53,6 @@ import {
   TabsTrigger,
 } from "src/core/ui/components/Tabs";
 import { Text } from "src/core/ui/components/Text";
-import * as React from "react";
-import { View } from "react-native";
-import {
-  GestureHandlerRootView,
-  ScrollView,
-} from "react-native-gesture-handler";
-import { useSafeAreaInsets } from "react-native-safe-area-context";
-import { ActivityIndicator } from "src/core/ui/components/ActivityIndicator";
 
 export function BudgetScreen() {
   const [tab, setTab] = React.useState("account");
@@ -82,17 +78,17 @@ export function BudgetScreen() {
           <View className="flex flex-row flex-wrap gap-x-3 gap-y-3">
             <Button variant="default" className="grow">
               <Text>Default</Text>
-              <Bell />
+              <Icon src="icons/bell" />
             </Button>
             <Button variant="outline" className="grow">
               <Text>Outline</Text>
             </Button>
             <Button variant="default" size="icon">
-              <Bell />
+              <Icon src="icons/bell" />
             </Button>
 
             <Button variant="outline" size="icon">
-              <Bell />
+              <Icon src="icons/bell" />
             </Button>
           </View>
           <Separator orientation="horizontal" />
@@ -168,7 +164,7 @@ export function BudgetScreen() {
           <View className="flex-row gap-8 items-center">
             <Progress value={progress} className="w-60" />
             <Button size="icon" onPress={onPress}>
-              <Refresh />
+              <Icon src="icons/rotate-cw" />
             </Button>
           </View>
           <Separator orientation="horizontal" className="mt-6" />
@@ -200,11 +196,10 @@ export function BudgetScreen() {
           <View className="flex-row gap-8 items-center justify-center">
             <ActivityIndicator />
             <IconClassContext.Provider value="text-foreground dark:text-foreground-dark">
-              <Refresh />
-              <Bell />
-              <ChevronDown />
-              <ChevronUp />
-              <ChevronRight />
+              <Icon src="icons/rotate-cw" />
+              <Icon src="icons/chevron-down" />
+              <Icon src="icons/chevron-up" />
+              <Icon src="icons/chevron-right" />
             </IconClassContext.Provider>
           </View>
           <Separator orientation="horizontal" className="mt-6" />

@@ -13,29 +13,17 @@
     "importHelpers": true,
     "target": "es2015",
     "module": "esnext",
-    "lib": [
-      "es2020",
-      "dom"
-    ],
+    "lib": ["es2020", "dom"],
     "skipLibCheck": true,
     "skipDefaultLibCheck": true,
     "baseUrl": ".",
     "paths": {
-      "@theme": [
-        "src/core/ui/theme.ts"
-      ],
-      "@assets": [
-        "assets/generated.ts"
-      ],
-      "@translations": [
-        "src/core/translations/defaults.ts"
-      ]
+      "@theme": ["src/core/ui/theme.ts"],
+      "@assets": ["assets/generated.ts"],
+      "@translations": ["src/core/translations/defaults.ts"]
     }
   },
-  "exclude": [
-    "node_modules",
-    "tmp"
-  ],
+  "exclude": ["node_modules", "tmp"],
   "include": [
     "**/*.ts",
     "**/*.tsx",

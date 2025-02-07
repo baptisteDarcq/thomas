@@ -11,7 +11,9 @@ export default {
   presets: [require("nativewind/preset")],
   theme: {
     ...nativewindThemeConfig,
-    ...require(`./apps/${process.env.EXPO_APP}/theme.ts`).nativewindThemeConfig,
+    ...(process.env.EXPO_APP
+      ? require(`./apps/${process.env.EXPO_APP}/theme.ts`).nativewindThemeConfig
+      : {}),
   },
   plugins: [],
-}
+};

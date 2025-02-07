@@ -5,6 +5,8 @@ import { TransactionLink } from "../components/TransactionLink";
 import getAsset from "src/core/technical/assets";
 import { AspectRatio } from "src/core/ui/components/AspectRatio";
 import BudgetLink from "src/modules/budget/components/BudgetLink";
+import { Button } from "src/core/ui/components/Button";
+import Icon from "src/core/technical/icon/Icon";
 
 export function AccountScreen() {
   return (
@@ -20,6 +22,8 @@ export function AccountScreen() {
           cachePolicy={"none"}
         />
       </AspectRatio>
+
+      <Icon src="icons/ambulance" className="text-orange-400 w-10 h-10" />
 
       {Constants.expoConfig?.extra?.modules["budget"] ? (
         <BudgetLink className="mb-5" />

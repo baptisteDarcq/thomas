@@ -2,8 +2,8 @@ import { cn } from "src/core/technical/theme/cn";
 import { cva, type VariantProps } from "class-variance-authority";
 import * as React from "react";
 import { Pressable } from "react-native";
-import { IconClassContext } from "../icons/iconWithContext";
 import { TextClassContext } from "./Text";
+import { IconClassContext } from "src/core/technical/icon/iconWithContext";
 
 const buttonVariants = cva(
   "group flex flex-row items-center justify-center rounded-md gap-x-3",
@@ -53,7 +53,7 @@ const buttonIconVariants = cva("", {
       default:
         "text-foreground dark:text-foreground-dark group-active:text-black group-active:dark:text-foreground-active-dark",
       outline:
-        "text-foreground dark:text-foreground-dark group-active:text-foreground-active group-active:dark:text-white",
+        "text-orange-700 dark:text-foreground-dark group-active:text-foreground-active group-active:dark:text-white",
     },
     size: {
       default: "h-5 w-5",

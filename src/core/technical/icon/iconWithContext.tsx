@@ -19,15 +19,13 @@ const iconVariants = cva("text-foreground", {
 const IconClassContext = React.createContext<string | undefined>(undefined);
 
 const iconWithContext = (
-  Component: React.ComponentType<
-    LucideProps & { readonly className?: string | undefined }
-  >
+  Component: React.ComponentType<{ readonly className?: string | undefined }>
 ) => {
   return ({
     variant,
     className,
     ...props
-  }: LucideProps & {
+  }: {
     readonly className?: string | undefined;
   } & VariantProps<typeof iconVariants>) => {
     const iconClassName = React.useContext(IconClassContext);

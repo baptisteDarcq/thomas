@@ -5,10 +5,9 @@ import Animated, {
 } from "react-native-reanimated";
 
 import { cn } from "src/core/technical/theme/cn";
-import { Sun } from "../icons/Sun";
 import { colors } from "@theme";
-import { Moon } from "../icons/Moon";
 import { useColorScheme } from "src/core/technical/theme/useColorScheme";
+import Icon from "src/core/technical/icon/Icon";
 
 export function ThemeToggle() {
   const { colorScheme, setColorScheme } = useColorScheme();
@@ -28,12 +27,12 @@ export function ThemeToggle() {
           {colorScheme === "dark"
             ? ({ pressed }) => (
                 <View className={cn("px-0.5", pressed && "opacity-50")}>
-                  <Sun color={colors.white} />
+                  <Icon src="icons/sun" className="text-white" />
                 </View>
               )
             : ({ pressed }) => (
                 <View className={cn("px-0.5", pressed && "opacity-50")}>
-                  <Moon color={colors.white} />
+                  <Icon src="icons/moon" className="text-white" />
                 </View>
               )}
         </Pressable>
